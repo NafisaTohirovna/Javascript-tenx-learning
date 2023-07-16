@@ -128,7 +128,7 @@
 //   showInfo() {
 //     console.log(`
 // ${this.name + " " + this.etaj} etajli
-// Hozilgi etaj ${this.hozirgiEtaj} 
+// Hozilgi etaj ${this.hozirgiEtaj}
 // list turgan joy ${this.lift()}`);
 //   }
 //   lift() {
@@ -169,31 +169,56 @@
 // universitet.showInfo();
 // ========================================================================
 
-class Person {
-  Fname = "";
-  Lname = "";
-  constructor(ismi, familyasi) {
-    this.Fname = ismi
-    this.Lname = familyasi
-  }
+// class Person {
+//   Fname = "";
+//   Lname = "";
+//   constructor(ismi, familyasi) {
+//     this.Fname = ismi
+//     this.Lname = familyasi
+//   }
 
-//   changeName(newName){
+// //   changeName(newName){
+// //     this.Fname = newName
+// //   }
+
+//   set changeName(newName){
 //     this.Fname = newName
 //   }
 
-  set changeName(newName){
-    this.Fname = newName
+//   get getFullName(){
+//     return this.Fname + ' ' + this.Lname
+//   }
+// }
+
+// const person = new Person('John' , 'Doe')
+// // person.changeName('toshmat')
+
+// person.changeName = 'G`ishmat'
+
+// console.log(person);
+// console.log(person.getFullName);
+
+// ================== UYga vazifa ==========================
+
+class House {
+  constructor(address, condition, floor) {
+    (this.address = address),
+      (this.condition = condition),
+      (this.floor = floor);
   }
 
-  get getFullName(){
-    return this.Fname + ' ' + this.Lname
+  showInfo() {
+    console.log(`
+uy manzili: ${this.address}
+uy sharoiti: ${this.condition}
+nechi qavatli: ${this.floor}
+    `);
   }
 }
 
-const person = new Person('John' , 'Doe')
-// person.changeName('toshmat')
-
-person.changeName = 'G`ishmat'
-
-console.log(person);
-console.log(person.getFullName);
+const firstHouse = new House("Termiz", "yaxshi", 1);
+const secondHouse = new House("Denov", "zo'r", 2);
+const thirdHouse = new House("Uzun", "zo'r", 1);
+firstHouse.showInfo();
+secondHouse.showInfo();
+thirdHouse.showInfo();
